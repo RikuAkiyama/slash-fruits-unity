@@ -23566,9 +23566,13 @@ MonoBehaviour:
   - {fileID: 5927701257325920322, guid: 666a61b64d3724bbd8092adedc2c1367, type: 3}
   - {fileID: 5927701257325920322, guid: 666a61b64d3724bbd8092adedc2c1367, type: 3}
   - {fileID: 5927701257325920322, guid: 666a61b64d3724bbd8092adedc2c1367, type: 3}
-  initialSpawnInterval: 1
-  finalSpawnInterval: 0.3
-  totalTime: 30
+  phases:
+  - phasePercentage: 33
+    spawnInterval: 1.5
+  - phasePercentage: 33
+    spawnInterval: 0.7
+  - phasePercentage: 33
+    spawnInterval: 0.3
 --- !u!1 &1612040221
 GameObject:
   m_ObjectHideFlags: 0
@@ -29028,6 +29032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadbc2e01814f4a04bd7f39fc30538e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 30
 --- !u!1 &1952918598
 GameObject:
   m_ObjectHideFlags: 0
