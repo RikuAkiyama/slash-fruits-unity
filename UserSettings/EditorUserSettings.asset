@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!162 &1
+EditorUserSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 4
+  m_ConfigSettings:
+    RecentlyUsedSceneGuid-0:
+      value: 0207570704030d585a5e552748770f40414f197b7a7b22632e281b60b1e3616e
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 5553005451570a0b08590f2643770c47471649792e2c75342e7d486be0e56739
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 5a57565e51025f0c54085d7348775a1242154b7d7a297465782c4b67e4e6376e
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 5b500d0300570d0f5c0c087441775d42434f4a78787d22322f2b4f60b6b5643d
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 0105050000535e020e0f087a44770844124f1b727d7c22357d791861e6e46760
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      flags: 0
+    auto save:
+      value: 2550581500
+      flags: 0
+    auto save prefab:
+      value: 2550581500
+      flags: 0
+    auto save scene:
+      value: 2550581500
+      flags: 0
+    auto save scene timer:
+      value: 2550581500
+      flags: 0
+    save scene interval:
+      value: 5501
+      flags: 0
+    vcSharedLogLevel:
+      value: 0d5e400f0650
+      flags: 0
+  m_VCAutomaticAdd: 1
+  m_VCDebugCom: 0
+  m_VCDebugCmd: 0
+  m_VCDebugOut: 0
+  m_SemanticMergeMode: 2
+  m_DesiredImportWorkerCount: 2
+  m_StandbyImportWorkerCount: 2
+  m_IdleImportWorkerShutdownDelay: 60000
+  m_VCShowFailedCheckout: 1
+  m_VCOverwriteFailedCheckoutAssets: 1
+  m_VCProjectOverlayIcons: 1
+  m_VCHierarchyOverlayIcons: 1
+  m_VCOtherOverlayIcons: 1
+  m_VCAllowAsyncUpdate: 1
+  m_ArtifactGarbageCollection: 1
