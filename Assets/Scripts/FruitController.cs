@@ -72,7 +72,14 @@ public class FruitController : MonoBehaviour
         if (other.gameObject.CompareTag("Knife"))
         {
             // ヒットSEを再生
-            GameObject.Find("HitSE").GetComponent<AudioPlayController>().Play();
+            if(this.tag == "GoldApple")
+            {
+                GameObject.Find("SpecialHitSE").GetComponent<AudioPlayController>().Play();
+            }
+            else
+            {
+                GameObject.Find("HitSE").GetComponent<AudioPlayController>().Play();
+            }
 
             // 分割されたフルーツを生成
             GameObject cutFruit1 = Instantiate(cutFruitPrefab, transform.position, transform.rotation);
