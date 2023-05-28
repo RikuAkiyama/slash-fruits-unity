@@ -54,7 +54,7 @@ public class GameDirector : MonoBehaviour
     
    void Start()
    {
-      GameManager.instance.Score = this.point;
+      GameManager.instance.Score = -1;
       this.timerText = GameObject.Find("Time");
       this.pointText = GameObject.Find("Point");
       // GameBGMを再生
@@ -75,7 +75,6 @@ public class GameDirector : MonoBehaviour
          if(this.flag)
          {
             this.flag = false;
-            GameManager.instance.Score = this.point;
             SendScore("/score");
          }
       }
@@ -86,7 +85,7 @@ public class GameDirector : MonoBehaviour
       // スコア登録リクエストを作成
       var param = new Dictionary<string, object>()
       {
-         ["score"] = GameManager.instance.Score,
+         ["score"] = this.point,
       };
       var client = new RestClient(GameManager.instance.Api);
       var authenticator = new JwtAuthenticator(GameManager.instance.Token);
@@ -101,6 +100,7 @@ public class GameDirector : MonoBehaviour
       if(response.StatusCode == HttpStatusCode.OK)
       {
          Debug.Log("スコア登録成功");
+         GameManager.instance.Score = this.point;
          SceneManager.LoadScene("ResultScene");
       }
       else

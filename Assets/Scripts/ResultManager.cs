@@ -12,6 +12,7 @@ using RestSharp.Authenticators;
 
 public class ResultManager : MonoBehaviour
 {
+    public Button titleButton;
     public Button retryButton;
     public TextMeshProUGUI result;
     public TextMeshProUGUI userRank;
@@ -44,10 +45,21 @@ public class ResultManager : MonoBehaviour
     private void Start()
     {
         GameObject.Find("ResultBGM").GetComponent<AudioPlayController>().Play();
-        result.text = GameManager.instance.Username + "'S SCORE: " + GameManager.instance.Score + " P";
+        if(GameManager.instance.Score != -1)
+        {
+            result.text = GameManager.instance.Username + "'S SCORE: " + GameManager.instance.Score + " P";
+        }
+        titleButton.onClick.AddListener((UnityEngine.Events.UnityAction) (() => ReturnToTitle()));
         retryButton.onClick.AddListener((UnityEngine.Events.UnityAction) (() => ReplayTokenRefresh("/tokenRefresh")));
         GetRanking("/ranking");
         GetRanking("/userRanking");
+    }
+
+    private void ReturnToTitle()
+    {
+        GameManager.instance.Token = "";
+        GameManager.instance.Username = "";
+        SceneManager.LoadScene("TitleScene");
     }
 
     private async void ReplayTokenRefresh(string endpoint)
@@ -71,11 +83,13 @@ public class ResultManager : MonoBehaviour
             Debug.Log("認証成功: " + GameManager.instance.Token);
             SceneManager.LoadScene("WaitScene");
         }
-        // 認証が失敗したとき、タイトル画面に遷移
+        // 認証が失敗したとき、トークンを破棄してタイトル画面に遷移
         else
         {
             var responseMessage = JsonSerializer.Deserialize<responseMessage>(response.Content);
             Debug.Log("エラー: " + responseMessage.message);
+            GameManager.instance.Token = "";
+            GameManager.instance.Username = "";
             SceneManager.LoadScene("TitleScene");
         }
     }

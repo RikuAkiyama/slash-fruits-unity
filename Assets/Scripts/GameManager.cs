@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Secrets secrets;
     public static GameManager instance = null;
     private string username;
     private string token;
     private int score;
-    public Secrets secrets;
-
-
     private string api;
 
     public string Username
